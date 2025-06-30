@@ -1,11 +1,22 @@
 import React from 'react';
+import About from './About';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
-const Home = () => <div><h1>Welcome to My Personal Website</h1></div>;
-const About = () => <div><h1>About Me</h1><p>This is the about page.</p></div>;
-const Projects = () => <div><h1>Projects</h1><p>Here are some projects.</p></div>;
+const Home: React.FC = () => (
+  <div>
+    <h1>Welcome to My Personal Website</h1>
+    <p>This is the landing page.</p>
+  </div>
+);
 
-export default function App() {
+const Projects: React.FC = () => (
+  <div>
+    <h1>Projects</h1>
+    <p>Here you can list my projects.</p>
+  </div>
+);
+
+const App: React.FC = () => {
   return (
     <Router>
       <nav style={{ padding: '1rem', borderBottom: '1px solid #ccc' }}>
@@ -22,4 +33,6 @@ export default function App() {
       </main>
     </Router>
   );
-}
+};
+
+export default App;

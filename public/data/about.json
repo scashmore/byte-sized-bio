@@ -1,0 +1,11 @@
+{
+    "name": "Susan Ashmore Livingston",
+    "title": "Software Engineer",
+    "bio": "Hi! I'm Susan, a passionate software developer with a love for creating clean, efficient code. When I'm not coding, I enjoy playing music, entertaining my ferrets, and cooking sugary confections.",
+    "profileImage": "https://via.placeholder.com/150",
+    "socialLinks": [
+      { "platform": "GitHub", "url": "https://github.com/scashmore" },
+      { "platform": "LinkedIn", "url": "https://www.linkedin.com/in/susan-livingston-881217a9/" }
+    ]
+  }
+  
