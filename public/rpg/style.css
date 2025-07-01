@@ -1,0 +1,60 @@
+/* Terminal style container */
+body {
+    background: #000;
+    color: #0f0;
+    font-family: "Courier New", Courier, monospace;
+    margin: 0; padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #terminal {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #33FF33;
+    background-color: #000;
+    border: 2px solid #33FF33;
+    white-space: pre-wrap;
+    height: 80vh; /* or remove height so it fills flex */
+  }
+  
+  #choices {
+    flex: 0 0 auto;
+    padding: 10px;
+    background-color: #000;
+    border-top: 2px solid #33FF33;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  #choices button {
+    background: #222;
+    color: #0f0;
+    border: 1px solid #0f0;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1em;
+    flex-grow: 1;
+    min-width: 120px;
+    transition: background 0.3s;
+  }
+  
+  #choices button:hover, #choices button:focus {
+    background: #0f0;
+    color: #000;
+    outline: none;
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    #choices button {
+      min-width: 100%;
+    }
+  }
+  

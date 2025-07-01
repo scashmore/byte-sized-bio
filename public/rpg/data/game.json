@@ -1,0 +1,92 @@
+{
+    "player": {
+      "name": "Hero",
+      "health": 100,
+      "energy": 50,
+      "weapon": "Rusty Sword"
+    },
+    "weapons": [
+      {
+        "name": "Rusty Sword",
+        "damage": 10
+      },
+      {
+        "name": "Magic Wand",
+        "damage": 15
+      }
+    ],
+    "enemies": [
+      {
+        "id": "goblin1",
+        "name": "Goblin",
+        "health": 30,
+        "damage": 5
+      }
+    ],
+    "npcs": [
+      {
+        "id": "old_mage",
+        "name": "Old Mage",
+        "dialogue": [
+          "Greetings, traveler.",
+          "Take this wand to aid you in your quest."
+        ],
+        "gives_item": "Magic Wand"
+      }
+    ],
+    "scenes": [
+      {
+        "id": "start",
+        "text": "You wake up in a dark forest. A path lies ahead.",
+        "choices": [
+          {
+            "text": "Follow the path",
+            "next_scene": "goblin_encounter"
+          },
+          {
+            "text": "Visit the hut",
+            "next_scene": "meet_mage"
+          }
+        ]
+      },
+      {
+        "id": "meet_mage",
+        "npc": "old_mage",
+        "next_scene": "goblin_encounter"
+      },
+      {
+        "id": "goblin_encounter",
+        "text": "A goblin jumps out from the bushes!",
+        "battle": "goblin1",
+        "next_scene": "after_battle"
+      },
+      {
+        "id": "after_battle",
+        "text": "You defeated the goblin and continue onward.",
+        "choices": [
+          {
+            "text": "End the game",
+            "next_scene": "end"
+          }
+        ]
+      },
+      {
+        "id": "end",
+        "text": "Thanks for playing!",
+        "choices": [
+          {
+            "text": "Play Again",
+            "next_scene": "start"
+          },
+          {
+            "text": "Quit",
+            "next_scene": "quit"
+          }
+        ]
+      },
+      {
+        "id": "quit",
+        "text": "Goodbye!"
+      }      
+    ]
+  }  
