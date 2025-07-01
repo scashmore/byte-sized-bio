@@ -50,7 +50,11 @@ const About: React.FC = () => {
       )}
       <h1>{data.name}</h1>
       <h2>{data.title}</h2>
-      <p>{data.bio}</p>
+      {data.bio.split('\n\n').map((paragraph, index) => (
+        <p key={index} style={{ marginBottom: '1rem' }}>
+            {paragraph}
+        </p>
+      ))}
 
       <h3>My Animals</h3>
       <div style={{ display: 'flex', overflowX: 'auto', gap: '1rem', paddingBottom: '1rem' }}>

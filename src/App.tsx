@@ -9,6 +9,13 @@ const Home: React.FC = () => (
   </div>
 );
 
+const Resume: React.FC = () => (
+  <div>
+    <h1>Resume</h1>
+    <p>My current resume.</p>
+  </div>
+);
+
 const Projects: React.FC = () => (
   <div>
     <h1>Projects</h1>
@@ -22,12 +29,14 @@ const App: React.FC = () => {
       <nav style={{ padding: '1rem', borderBottom: '1px solid #ccc' }}>
         <Link to="/" style={{ marginRight: '1rem' }}>Home</Link>
         <Link to="/about" style={{ marginRight: '1rem' }}>About</Link>
+        <Link to="/resume" style={{ marginRight: '1rem' }}>Resume</Link>
         <Link to="/projects">Projects</Link>
       </nav>
       <main style={{ padding: '1rem' }}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/resume" element={<Resume />} />
           <Route path="/projects" element={<Projects />} />
         </Routes>
       </main>
