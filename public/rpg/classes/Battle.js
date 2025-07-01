@@ -13,6 +13,7 @@ export default class Battle {
     
       const options = [
         { text: "Attack", value: "attack" },
+        { text: "Change Weapon", value: "change" },
         { text: "Run away", value: "run" }
       ];
     
@@ -37,10 +38,23 @@ export default class Battle {
         } else {
           await this.terminal.print("Failed to run away!");
         }
+      } else if (selected === "change") {
+        const weaponOptions = this.player.weapons.map(w => ({
+          text: w.name,
+          value: w.name
+        }));
+    
+        const weaponIndex = await new Promise(resolve => {
+          this.terminal.displayChoices(weaponOptions, resolve);
+        });
+    
+        this.terminal.clearChoices();
+    
+        const newWeapon = weaponOptions[weaponIndex].value;
+        this.player.setActiveWeapon(newWeapon);
+        await this.terminal.print(`You equipped the ${newWeapon}.`);
       }
     }
-    
-    
   
     async enemyTurn() {
       if (this.enemy.isAlive()) {

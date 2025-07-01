@@ -9,14 +9,12 @@ import Battle from './Battle.js';
 
 export default class Game {
   constructor(data, terminal) {
-    // data is the parsed JSON game data
     this.terminal = terminal;
     this.player = null;
     this.weapons = new Map();
     this.enemies = new Map();
     this.npcs = new Map();
     this.scenes = new Map();
-
     this.currentScene = null;
 
     this.loadData(data);
@@ -31,8 +29,9 @@ export default class Game {
 
     // Load player
     const p = data.player;
-    const weapon = this.weapons.get(p.weapon) || null;
-    this.player = new Player(p.name, p.health, p.energy, weapon);
+    const weapon = this.weapons.get(p.weapon);
+    const startingWeapons = weapon ? [weapon] : [];
+    this.player = new Player(p.name, p.health, p.energy, startingWeapons);
 
     // Load enemies
     for (const e of data.enemies || []) {
@@ -77,7 +76,8 @@ export default class Game {
           const weapon = this.weapons.get(npc.givesItem);
           if (weapon) {
             await this.terminal.print(`You received ${weapon.name}!`);
-            this.player.weapon = weapon;
+            this.player.addWeapon(weapon);
+            this.player.setActiveWeapon(weapon.name);
           }
         }
       }
@@ -88,7 +88,8 @@ export default class Game {
       const weapon = this.weapons.get(scene.gainWeapon);
       if (weapon) {
         await this.terminal.print(`You obtained ${weapon.name}!`);
-        this.player.weapon = weapon;
+        this.player.addWeapon(weapon);
+        this.player.setActiveWeapon(weapon.name);
       }
     }
   }
@@ -108,9 +109,9 @@ export default class Game {
     while (this.currentScene) {
       const scene = this.currentScene;
       scene.display(this.terminal);
-  
+
       await this.applySceneEffects(scene);
-  
+
       if (scene.battle) {
         const alive = await this.startBattle(scene.battle);
         if (!alive) {
@@ -118,28 +119,27 @@ export default class Game {
           break;
         }
       }
-  
+
       // No choices, auto advance
       if (scene.choices.length === 0 && scene.nextScene) {
         this.currentScene = this.scenes.get(scene.nextScene);
         continue;
       }
-  
+
       // Handle player choice
       if (scene.choices.length > 0) {
         const index = await new Promise(resolve => {
           this.terminal.displayChoices(scene.choices, resolve);
         });
-  
+
         this.terminal.clearChoices();
-  
+
         const choice = scene.choices[index];
         this.currentScene = this.scenes.get(choice.nextScene);
       } else {
-        // No choices and no next scene — end game
         await this.terminal.print("The End.");
         break;
       }
     }
-  }  
+  }
 }
