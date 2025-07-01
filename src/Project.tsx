@@ -13,16 +13,16 @@ interface Project {
 const projects: Project[] = [
   {
     title: 'Text RPG Adventure',
-    description: 'A browser-based text RPG with branching choices, character selection, and a battle system. This is a trimmed version of a larger personal project.',
+    description: 'A browser-based text RPG with branching choices, character selection, and a battle system. This is a trimmed version of a larger personal project. The full project includes a pipeline that takes in a JSON file with game data, and then produces a full text based rpg with multiple choices/branches and endings.',
     techStack: ['JavaScript', 'HTML/CSS', 'Modular Classes'],
     embedUrl: '/rpg/index.html',
   },
   {
-    title: 'Resume Scraper (Example)',
-    description: 'Python-based web scraper that collects job descriptions and extracts required skills. Results are cleaned and exported to JSON for analysis.',
-    techStack: ['Python', 'Scrapy'],
-    repoUrl: '',
-    image: '',
+    "title": "Gluten-Free Recipe Scraper",
+    "description": "Python-based scraper that collects gluten-free recipes from popular food blogs. Parsed recipes include ingredients, instructions, and tags, and are stored in a structured database for easy browsing or integration with a meal planner.",
+    "techStack": ["Python", "Scrapy", "SQLite"],
+    "repoUrl": "",
+    "image": ""
   },
   {
     title: 'Space Iguana Lore API',
