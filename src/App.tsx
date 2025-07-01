@@ -1,18 +1,12 @@
 import React from 'react';
 import About from './About';
+import Resume from './Resume';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 const Home: React.FC = () => (
   <div>
     <h1>Welcome to My Personal Website</h1>
     <p>This is the landing page.</p>
-  </div>
-);
-
-const Resume: React.FC = () => (
-  <div>
-    <h1>Resume</h1>
-    <p>My current resume.</p>
   </div>
 );
 

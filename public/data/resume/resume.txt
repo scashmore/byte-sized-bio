@@ -1,0 +1,43 @@
+﻿Susan Livingston
+Oakton, VA • US Citizen •  scashmorecitcom@gmail.com • (828) 553-4465
+
+
+PROFESSIONAL SOFTWARE EXPERIENCE
+DC ENERGY, McLean, VA
+Software Engineer, August 2023 – Present
+* Migrated APIs from Falcon to FastAPI, enhancing data access performance for critical analytics tools.
+* Designed and managed scalable MySQL database schemas, ensuring data integrity across internal systems.
+* Managed and processed sensitive market data while ensuring compliance with industry regulations.
+* Built data preprocessing pipelines using Pandas and R DataTables to streamline data workflows.
+* Led UI/UX development of data visualization platforms using Svelte and Figma, enabling actionable insights for stakeholders.
+* Scraped and structured large datasets using Scrapy to support analytics use cases.
+* Collaborated cross-functionally to enhance enterprise systems, improving operational efficiency.
+* Utilized Agile methodologies to deliver incremental software improvements, achieving team sprint goals.
+VIKING SASQUATCH Remote
+Full Stack Web Developer July 2021 – April 2023
+* Designed and implemented RESTful APIs and database structures for custom applications.
+* Processed and transformed datasets using ETL pipelines (Apache NiFi).
+* Maintained Python-based data processing scripts, improving workflow efficiency and reducing error rates.
+* Built custom software for clients, including React and TypeScript dashboards, to address specific business needs.
+* Delivered high-quality software through Agile development practices, driving sprint goals and feature releases.
+* Gained hands-on experience with Linux, Bash scripting, and deploying containerized applications using Docker.
+* Deployed APIs to Google Cloud Platform (GCP), ensuring scalable and secure access to critical data.
+Skills
+Languages & Technologies: Python, R, JavaScript, TypeScript, Java, MATLAB FastAPI, Svelte, React, Vue, Scrapy, Linux, Php, Node.js, Nest.js
+Databases: MySQL, MSSQL, Postgres, MongoDB, DynamoDB
+Tools: Figma, Jira, GitHub, GCP, Docker
+Additional Skills: REST API design, UI/UX development, Agile methodologies, ETL processes, Object-Oriented Programming (OOP)
+Extras: C++ game in development - https://github.com/scashmore/Space-Iguana-Dave
+
+
+EDUCATION
+University of North Carolina Charlotte        2021
+Certificate, Full Stack Web Development
+
+
+The Catholic University of America        2020
+Masters of Music
+
+
+Brevard College        2018
+BA in Mathematics, BA in Music Performance, Minor in Physics, Minor in History, Minor in Social Sciences
