@@ -1,4 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import {
+  Container,
+  ProfileSection,
+  BioBox,
+  Carousel,
+  SectionHeading,
+  SocialLinksList,
+} from './components/ui/aboutComponents';
+import { useColorModeValue } from './components/ui/color-mode';
 
 interface SocialLink {
   platform: string;
@@ -16,6 +25,11 @@ const About: React.FC = () => {
   const [data, setData] = useState<AboutData | null>(null);
   const [carouselImages, setCarouselImages] = useState<string[]>([]);
   const [profileImage, setProfileImage] = useState<string | null>(null);
+
+  const bg = useColorModeValue('lavender.50', 'lavender.900');
+  const cardBg = useColorModeValue('white', 'lavender.700');
+  const accent = useColorModeValue('gold.500', 'gold.300');
+  const textColor = useColorModeValue('fg', 'lavender.100');
 
   useEffect(() => {
     // Load about.json
@@ -40,45 +54,26 @@ const About: React.FC = () => {
   if (!data) return <div>Loading...</div>;
 
   return (
-    <div style={{ maxWidth: '800px', margin: '0 auto', padding: '1rem' }}>
-      {profileImage && (
-        <img
-          src={profileImage}
-          alt={`${data.name} profile`}
-          style={{ borderRadius: '50%', width: '150px', height: '150px', objectFit: 'cover' }}
-        />
-      )}
-      <h1>{data.name}</h1>
-      <h2>{data.title}</h2>
-      {data.bio.split('\n\n').map((paragraph, index) => (
-        <p key={index} style={{ marginBottom: '1rem' }}>
-            {paragraph}
-        </p>
-      ))}
-
-      <h3>My Animals</h3>
-      <div style={{ display: 'flex', overflowX: 'auto', gap: '1rem', paddingBottom: '1rem' }}>
-        {carouselImages.map((url, i) => (
-          <img
-            key={i}
-            src={url}
-            alt={`carousel ${i}`}
-            style={{ width: '200px', height: '150px', objectFit: 'cover', borderRadius: '8px' }}
-          />
-        ))}
-      </div>
-
-      <h3>Find me on:</h3>
-      <ul>
-        {data.socialLinks.map((link) => (
-          <li key={link.platform}>
-            <a href={link.url} target="_blank" rel="noopener noreferrer">
-              {link.platform}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <Container bg={bg}>
+      <ProfileSection
+        accent={accent}
+        profileImage={profileImage}
+        name={data.name}
+        title={data.title}
+        textColor={textColor}
+      />
+      <BioBox cardBg={cardBg} textColor={textColor}>
+        {data.bio}
+      </BioBox>
+      <SectionHeading accent={accent}>My Animals</SectionHeading>
+      <Carousel images={carouselImages} />
+      <SectionHeading accent={accent}>Find me on:</SectionHeading>
+      <SocialLinksList
+        socialLinks={data.socialLinks}
+        accent={accent}
+        textColor={textColor}
+      />
+    </Container>
   );
 };
 
