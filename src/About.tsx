@@ -26,8 +26,8 @@ const About: React.FC = () => {
   const [carouselImages, setCarouselImages] = useState<string[]>([]);
   const [profileImage, setProfileImage] = useState<string | null>(null);
 
-  const bg = useColorModeValue('lavender.50', 'lavender.900');
-  const cardBg = useColorModeValue('white', 'lavender.700');
+  const bg = useColorModeValue('lavender.400', 'lavender.900');
+  const cardBg = useColorModeValue('lavender.200', 'lavender.700');
   const accent = useColorModeValue('gold.500', 'gold.300');
   const textColor = useColorModeValue('fg', 'lavender.100');
 
@@ -41,7 +41,7 @@ const About: React.FC = () => {
     // Set known profile image path
     setProfileImage('/data/about/profile-picture/profile-picture.jpeg');
 
-    // Hardcoded list of carousel images (update filenames as needed)
+    // Hardcoded (for now) list of carousel images (update filenames as needed)
     setCarouselImages([
       '/data/about/carousel/pic1.jpg',
       '/data/about/carousel/pic2.jpeg',
@@ -65,7 +65,7 @@ const About: React.FC = () => {
       <BioBox cardBg={cardBg} textColor={textColor}>
         {data.bio}
       </BioBox>
-      <SectionHeading accent={accent}>My Animals</SectionHeading>
+      <SectionHeading accent={accent}>My Menagerie</SectionHeading>
       <Carousel images={carouselImages} />
       <SectionHeading accent={accent}>Find me on:</SectionHeading>
       <SocialLinksList

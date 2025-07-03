@@ -20,7 +20,7 @@ interface StyledProps {
 }
 
 export const Container: React.FC<{ bg: string; children?: React.ReactNode }> = ({ bg, children }) => (
-    <Box maxW="800px" mx="auto" px={4} py={6} bg={bg} borderRadius="md" boxShadow="lg">
+    <Box maxW="80%" mx="auto" px={4} py={6} bg={bg} borderRadius="md" boxShadow="lg">
         {children}
     </Box>
 );
