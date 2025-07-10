@@ -18,7 +18,7 @@ body {
     background-color: #000;
     border: 2px solid #33FF33;
     white-space: pre-wrap;
-    height: 80vh; /* or remove height so it fills flex */
+    height: 60vh; 
   }
   
   #choices {

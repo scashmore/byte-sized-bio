@@ -4,15 +4,18 @@ import Resume from './Resume';
 import Project from './Project';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Box } from '@chakra-ui/react';
+import { useColorModeValue } from './components/ui/color-mode';
+
 
 const App: React.FC = () => {
+  const navColor = useColorModeValue('fg', 'white');
   return (
     <Box minHeight="100vh" bg="bg">
       <Router>
-        <nav style={{ padding: '1rem', borderBottom: '1px solid #ccc' }}>
-          <Link to="/" style={{ marginRight: '1rem' }}>About</Link>
-          <Link to="/resume" style={{ marginRight: '1rem' }}>Resume</Link>
-          <Link to="/projects">Projects</Link>
+        <nav style={{ zIndex: 1000, top: 0, position: 'sticky', padding: '1rem', backgroundColor: navColor, borderBottom: '1px solid #ccc' }}>
+          <Link to="/" style={{ marginRight: '1rem', fontWeight: 'bold' }}>About</Link>
+          <Link to="/resume" style={{ marginRight: '1rem', fontWeight: 'bold' }}>Resume</Link>
+          <Link to="/projects" style={{fontWeight: 'bold' }}>Projects</Link>
         </nav>
         <main style={{ padding: '1rem' }}>
           <Routes>

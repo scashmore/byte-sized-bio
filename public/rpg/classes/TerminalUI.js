@@ -8,7 +8,7 @@ export default class TerminalUI {
     this.outputArea.style.fontFamily = "'Courier New', Courier, monospace";
     this.outputArea.style.color = "#33FF33";
     this.outputArea.style.padding = "10px";
-    this.outputArea.style.height = "80vh";
+    this.outputArea.style.height = "60vh";
     this.outputArea.style.overflowY = "auto";
     this.outputArea.style.backgroundColor = "#000";
     this.outputArea.style.border = "2px solid #33FF33";

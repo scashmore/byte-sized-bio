@@ -6,7 +6,7 @@ import {
   Carousel,
   SectionHeading,
   SocialLinksList,
-} from './components/ui/aboutComponents';
+} from './components/aboutComponents';
 import { useColorModeValue } from './components/ui/color-mode';
 
 interface SocialLink {
