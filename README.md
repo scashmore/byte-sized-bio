@@ -1,46 +1,30 @@
-# Getting Started with Create React App
+# Byte-Sized Bio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a personal bio site built with React, showcasing a little bit of who I am — professionally and otherwise.
 
-## Available Scripts
+🛠️ **Work in Progress**  
+This project is still under development. The plan is to eventually deploy it using GitHub Pages via GitHub Actions, but that setup will come once the site design and content are finalized.
 
-In the project directory, you can run:
+## 📁 Sections
 
-### `npm start`
+- **About:** Includes a short bio, photos of my chaos crew (ferrets and cats), and links to my socials.
+- **Projects:** Highlights some of the things I’ve built or worked on. One of those — an API-based project — is still in early development. It's something I’m excited about, but like many personal projects, it’s waiting on time I haven’t quite found yet.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 💅 Styling
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+This project uses **[Chakra UI](https://chakra-ui.com/)** for styling. It provides accessible, composable React components out of the box, and makes it easy to iterate quickly with a consistent design system.
 
-### `npm test`
+## 🚧 Planned Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Fully responsive layout
+- JSON-driven content for easy updates
+- GitHub Actions + GitHub Pages deployment (coming once stable)
+- Expandable project gallery with live links and demos
 
-### `npm run build`
+## 🧪 Local Development
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To run the project locally:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm install
+npm run dev
